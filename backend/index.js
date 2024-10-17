@@ -26,3 +26,4 @@ app.listen(3000, () => {
   dbConnect();
   console.log(`Server is running on port : https://taskhubapi.vercel.app:${port}/`);
 });
+module.exports = app; // Export the app
