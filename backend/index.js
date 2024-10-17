@@ -11,6 +11,8 @@ app.use(cookieParser());
 app.use(cors());
 app.use(morgan("dev"));
 dotenv.config();
+const User = require("../models/userSchema");
+
 const dbConnect = require("./config/dbConnect");
 
 app.use("/api/tasks", taskRouter);
@@ -22,7 +24,13 @@ app.get(`/`, (req, res) => {
   res.send("Hello world !!!!");
 });
 app.get('/users',(req,res)=>{
-  res.send("All Users");
+  try {
+    const users = await User.find();
+
+    res.status(200).json(users);
+  } catch (error) {
+    res.status(500).json({ message: "Server Error" });
+  }
 });
 const port = process.env.PORT || 8000;
 
