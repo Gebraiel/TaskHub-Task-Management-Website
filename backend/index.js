@@ -24,13 +24,7 @@ app.get(`/`, (req, res) => {
   res.send("Hello world !!!!");
 });
 app.get('/users',(req,res)=>{
-  try {
-    const users = await User.find();
-
-    res.status(200).json(users);
-  } catch (error) {
-    res.status(500).json({ message: "Error : Server Error!!" });
-  }
+  
 });
 const port = process.env.PORT || 8000;
 
