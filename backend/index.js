@@ -29,7 +29,7 @@ app.get('/users',(req,res)=>{
 
     res.status(200).json(users);
   } catch (error) {
-    res.status(500).json({ message: "Server Error" });
+    res.status(500).json({ message: "Error : Server Error!!" });
   }
 });
 const port = process.env.PORT || 8000;
