@@ -18,6 +18,7 @@ app.use("/api/users", userRouter);
 
 app.get(`/`, (req, res) => {
   res.send("Hello world !!!!");
+  console.log("Hello world !!!!");
 });
 const port = process.env.PORT || 8000;
 
