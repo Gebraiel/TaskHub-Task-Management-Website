@@ -21,7 +21,7 @@ app.get(`/`, (req, res) => {
 });
 const port = process.env.PORT || 8000;
 
-app.listen(port, () => {
+app.listen(3000, () => {
   console.log("Hello");
   dbConnect();
   console.log(`Server is running on port : https://taskhubapi.vercel.app:${port}/`);
