@@ -17,8 +17,9 @@ app.use("/api/tasks", taskRouter);
 app.use("/api/users", userRouter);
 
 app.get(`/`, (req, res) => {
-  res.send("Hello world !!!!");
   console.log("Hello world !!!!");
+
+  res.send("Hello world !!!!");
 });
 const port = process.env.PORT || 8000;
 
