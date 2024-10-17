@@ -23,5 +23,5 @@ const port = process.env.PORT || 8000;
 
 app.listen(port, () => {
   dbConnect();
-  console.log(`Server is running on port : http://localhost:${port}/`);
+  console.log(`Server is running on port : https://taskhubapi.vercel.app:${port}/`);
 });
