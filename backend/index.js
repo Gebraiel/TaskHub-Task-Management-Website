@@ -13,21 +13,12 @@ app.use(morgan("dev"));
 dotenv.config();
 
 const dbConnect = require("./config/dbConnect");
-
+dbConnect();
 app.use("/api/tasks", taskRouter);
 app.use("/api/users", userRouter);
 
 app.get(`/`, (req, res) => {
   console.log("Hello world !!!!");
-
   res.send(`Hello This is enviroment variable ${process.env.MONGO_URI}`);
-});
-
-const port = process.env.PORT || 8000;
-
-app.listen(3000, () => {
-  console.log("Hello");
-  dbConnect();
-  console.log(`Server is running on port : https://taskhubapi.vercel.app:${port}/`);
 });
 module.exports = app; // Export the app
