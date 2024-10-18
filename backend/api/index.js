@@ -14,7 +14,7 @@ dotenv.config();
 
 const dbConnect = require("./config/dbConnect");
 
-app.get(`/`, (req, res) => {
+app.get(`/api`, (req, res) => {
   console.log("Hello API!!!!");
 
   res.send(`Hello API`);
