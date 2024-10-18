@@ -11,7 +11,6 @@ app.use(cookieParser());
 app.use(cors());
 app.use(morgan("dev"));
 dotenv.config();
-const User = require("../models/userSchema");
 
 const dbConnect = require("./config/dbConnect");
 
