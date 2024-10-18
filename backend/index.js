@@ -21,18 +21,9 @@ app.use("/api/users", userRouter);
 app.get(`/`, (req, res) => {
   console.log("Hello world !!!!");
 
-  res.send("Hello world !!!!");
+  res.send(`Hello This is enviroment variable ${process.env.MONGO_URI}`);
 });
-app.get('/users',(req,res)=>{
-    try {
-    const users = await User.find();
 
-    res.status(200).json(users);
-  } catch (error) {
-    res.status(500).json({ message: "Server Error" });
-  }
-
-});
 const port = process.env.PORT || 8000;
 
 app.listen(3000, () => {
